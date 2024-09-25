@@ -54,3 +54,11 @@ let header = document.querySelector("header");
             });
         }
     };
+
+
+    document.querySelectorAll('nav ul li a').forEach(link => {
+        link.addEventListener('touchstart', function(e) {
+            window.location.href = this.href;  // Force the link to navigate
+        });
+    });
+    
