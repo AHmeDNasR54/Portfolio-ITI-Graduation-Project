@@ -104,7 +104,7 @@ ul{
     /* background-color: rgb(142, 56, 56); */
   }
   .scrolled{
-    background-color: gray;
+    background-color:#11151d;
   }
   header .container{
     display: flex;
@@ -124,6 +124,7 @@ ul{
   }
   header h2{
     margin-left: -20px;
+    color: white;
   }
   header h2 span{
     color: orangered;
@@ -146,6 +147,7 @@ header h2 span:hover{
     header nav .toggle-menu{
         display: none;
     }
+   
   }
   header nav ul{
     display: flex;
@@ -153,6 +155,10 @@ header h2 span:hover{
   @media (max-width:767px){
     header nav ul{
         display: none;
+    }
+    header h2{
+      margin-left: 10px;
+     
     }
     header nav .toggle-menu:hover + ul{
         display: flex;
@@ -162,10 +168,12 @@ header h2 span:hover{
         left: 0;
         width: 100%;
         background-color: rgb(0 0 0 / 50%);
+        z-index: 100;
     }
     header nav ul li a{
         padding: 15px !important;
     }
+
   }
   /* header nav ul li{
     padding: 40px 15px;
@@ -217,8 +225,33 @@ header h2 span:hover{
     gap: 10px;
   }
   .contact-landing{
-    background-image: url(../Images/contact.png);
+    background-image: url(../Images/images.jpg);
+    background-size: cover;
+    background-position: 0 0;
   }
+  @media (max-width: 767px) {
+    .contact-landing {
+      width: 100%;
+      background-size: 100% 100%;  /* Stretch to fit both width and height */
+      background-repeat: no-repeat;  /* Prevent repetition */
+    }
+  }
+  @media (max-width: 992px) {
+    .contact-landing {
+      width: 100%;
+      background-size: 100% 100%;  /* Stretch to fit both width and height */
+      background-repeat: no-repeat;  /* Prevent repetition */
+    }
+  }
+  @media (max-width: 1400px) {
+    .contact-landing {
+      width: 100%;
+      background-size: 100% 100%;  /* Stretch to fit both width and height */
+      background-repeat: no-repeat;  /* Prevent repetition */
+    }
+  }
+  
+  
   .landing .container{
     width: 80%;
     margin-top: 200px;
@@ -263,6 +296,10 @@ header h2 span:hover{
 }
 @media (max-width:767px) {
 
+  .landing .container{
+    display: block;
+    text-align: center;
+  }
   .landing .image {
     width: 60%;
   }
@@ -273,7 +310,10 @@ header h2 span:hover{
   }
 }
 @media (max-width:992px) {
-
+  .landing .container{
+    display: block;
+    text-align: center;
+  }
     .landing .image {
       width: 60%;
     }
@@ -283,7 +323,13 @@ header h2 span:hover{
       margin-top: 100px;
     }
   }
+  @media (min-width:993px) {
+    .landing .container{
+     display: flex;
+    gap: 70px;
+    }
 
+}
 
   /* Basic Styling for the About Section */
 .about-section {
@@ -363,8 +409,8 @@ header h2 span:hover{
     gap: 10px;
     flex-wrap: wrap;
     justify-content: space-between;
-    background-color: #777;
-    padding: 20px;
+    background-color: #11151d;
+    padding: 30px;
     /* height: auto; */
   }
   .services .container .item{
@@ -372,7 +418,7 @@ header h2 span:hover{
     background-color: white;
     color: white;
     padding: 10px;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
     /* margin-right: 15px; */
     /* height: 250px; */
     line-height: 1.7;
@@ -382,7 +428,7 @@ header h2 span:hover{
   .services .container .item:hover{
     background-color: orangered;
     /* transition: ; */
-    transform: rotate(3deg) scale(1.1);
+    transform: scale(1.1);
   }
   .services .container .item:hover i{
     color: black;
@@ -407,6 +453,18 @@ header h2 span:hover{
     color: #777;
   }
   
+  @media (max-width: 768px) {
+   .services .container{
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+   .services .container .item{
+      margin: auto;
+      width: 80%;
+   }
+  }
 
 
 /* CONTACT */
@@ -428,9 +486,9 @@ header h2 span:hover{
     width: 50px;
     height: 50px;
     /* border: 2px solid red; */
-    background-color:#0058b5;
+    background-color:#11151d;
     border-radius: 50%;
-    color:#f7ce00;
+    color:orangered;
 
     display: flex;
     align-items: center;
@@ -456,7 +514,7 @@ header h2 span:hover{
 .contact-container .info .component .whats{
     text-decoration: none;
 }
-.contact-container .info .component a:not(.whats)::after {
+.contact-container .info .component a.mail::after,.contact-container .info .component a.number::after {
     content: '';
     position: absolute;
     left: 0; /* Start from the left */
@@ -481,6 +539,12 @@ header h2 span:hover{
 .contact-container .info .component .social{
     display: flex;
     gap: 10px;
+}
+.contact-container .info .component .social a{
+  transition: transform 0.3s ease;
+}
+.contact-container .info .component .social a:hover{
+  transform: scale(1.1);
 }
 
 .contact-container form .input{
@@ -511,32 +575,97 @@ header h2 span:hover{
     margin-top: 15px;
     margin-left: 150PX;
     width:150PX;
-    background-color:#0058b5;
-    color: #f7ce00;
+    background-color:#11151d;
+    color: orangered;
     transition: background-color 0.3s ease, color 0.3s ease;
     border: none;
-    /* border-radius: 10%; */
+    border-radius: 10px;
     font-weight: bold;
 }
 .contact-container form button:hover{
-    background-color: #f7ce00;
-    color: #0058b5;
+    background-color: orangered;
+    color: #11151d;
 }
+@media(max-width:767px){
+  .contact-container{
+    flex-direction: column;
+    text-align: center;
+    /* gap: 30px; */
+    /* margin: auto; */
+  }
+  .contact-container .info {
+    margin: auto;
+  }
+  .contact-container form{
+    margin: auto;
+    margin-top: 40px;
+
+  }
+  .contact-container form button{
+    margin: auto;
+    margin-top: 20px;
+}
+}
+/* Medium */
+@media (max-width:992px)
+{
+  .contact-container{
+    flex-direction: column;
+    text-align: center;
+    /* gap: 30px; */
+    /* margin: auto; */
+  }
+  .contact-container .info {
+    margin: auto;
+  }
+  .contact-container form{
+    margin: auto;
+    margin-top: 40px;
+
+  }
+  .contact-container form button{
+    margin: auto;
+    margin-top: 20px;
+}
+}
+
+
+
+
 /* Portfolio */
 
-.portfolio .container{
-    display: flex;
-    flex-direction: row;
-   justify-content: space-between;
-    background-image: url(../Images/portfoliojpg.jpg);
+.portfolio .container {
+  position: relative; /* Ensure the pseudo-element positions correctly */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 80%;
+  margin: auto;
+  padding: 30px;
+  z-index: 1; /* Ensure content is above the pseudo-element */
 }
+
+.portfolio .container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url(../Images/portfoliojpg.jpg);
+  background-size: cover;
+  filter: blur(2px); /* Apply blur here */
+  z-index: -1; /* Keep it behind the container's content */
+}
+
 .portfolio .container .card{
     width: 30%;
-    border: 5px solid black;
-    background-color: #333;
+    /* border: 5px solid black; */
+    background-color: white;
+    border-radius: 10px;
 }
 .portfolio .container .card:hover{
-transform: rotate(3deg) scale(1.1);
+transform:  scale(1.1);
 }
 .portfolio .container .card img{
     max-width: 100%;
@@ -550,7 +679,8 @@ transform: rotate(3deg) scale(1.1);
 
 }
 .portfolio .container .card p{
-    color: white;
+    color:black;
+    font-weight: bold;
     line-height: 1.7;
     padding: 10px;
     margin-bottom: 10px;
@@ -561,10 +691,12 @@ transform: rotate(3deg) scale(1.1);
    padding: 10px;
    background-color: orangered;
    transition: background-color 0.6s ease-in-out;
+   border: none;
+   border-radius: 10px;
 
 }
 .portfolio .container .card button:hover{
-    background-color: white;
+    background-color:#11151d;
     /* transform: rotate(3deg) scale(1.1); */
 }
 .portfolio .container .card button:hover a{
@@ -577,3 +709,36 @@ transform: rotate(3deg) scale(1.1);
     color: white;
     font-weight: bold;
 }
+@media (max-width: 768px) {
+  .portfolio .container{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap: 30px;
+   }
+  .portfolio .container .card{
+     margin: auto;
+     margin-bottom: 20px;
+     width: 80%;
+  }
+  .portfolio .container .card:nth-last-child(1){
+    margin-top: -10px;
+  }
+ }
+ @media (max-width: 1199px) {
+  .portfolio .container{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap: 30px;
+   }
+  .portfolio .container .card{
+     margin: auto;
+     margin-bottom: 20px;
+     width: 80%;
+     padding: 20px;
+  }
+  .portfolio .container .card:nth-last-child(1){
+    margin-top: -10px;
+  }
+ }
