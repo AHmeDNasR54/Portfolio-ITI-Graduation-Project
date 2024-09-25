@@ -719,7 +719,24 @@ transform:  scale(1.1);
   .portfolio .container .card{
      margin: auto;
      margin-bottom: 20px;
-     width: 80%;
+     width: 90%;
+  }
+  .portfolio .container .card:nth-last-child(1){
+    margin-top: -10px;
+  }
+ }
+ @media (max-width: 500px) {
+  .portfolio .container{
+     display: flex;
+     flex-direction: column;
+     flex-wrap: wrap;
+     gap: 30px;
+     width: 100%;
+   }
+  .portfolio .container .card{
+     margin: auto;
+     margin-bottom: 20px;
+     width: 95%;
   }
   .portfolio .container .card:nth-last-child(1){
     margin-top: -10px;
